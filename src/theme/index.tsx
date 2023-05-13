@@ -32,38 +32,47 @@ export const THEME = extendTheme({
     xxxl: 32,
   },
 
+  sizes: {
+    13: 52,
+    14: 56,
+    49: 196,
+  },
+
   components: {
+    Heading: {
+      defaultProps: {
+        fontFamily: 'heading',
+        fontSize: 'xxxl',
+      },
+    },
+    Text: {
+      defaultProps: {
+        fontFamily: 'body',
+        fontSize: 'md',
+        color: 'white',
+      },
+    },
     Button: {
       defaultProps: {
         h: 14,
         w: 'full',
         rounded: 'sm',
       },
-
       variants: {
         solid: {
           bg: 'green.700',
           _pressed: {
             bg: 'green.500',
+            opacity: 0.7,
           },
           _text: {
             fontSize: 'md',
             fontFamily: 'heading',
+            color: 'white',
           },
-        },
-
-        outline: {
-          borderColor: 'green.500',
-          borderWidth: 1,
-          bg: 'transparent',
-          rounded: 'full',
-          _pressed: {
-            bg: 'gray.500',
-          },
-          _text: {
-            color: 'green.500',
-            fontSize: 'md',
-            fontFamily: 'heading',
+          _loading: {
+            bg: 'green.700',
+            opacity: 1,
           },
         },
       },
