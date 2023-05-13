@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 
 import { StyleSheet } from 'react-native';
@@ -8,9 +9,11 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto';
 
-import { Center, NativeBaseProvider, Text } from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { SignIn } from '@screens/SignIn';
 
 import { Loading } from '@atoms/Loading';
 
@@ -33,12 +36,12 @@ export default function App() {
   return (
     <NativeBaseProvider theme={THEME}>
       <SafeAreaView style={styles.container}>
-        <StatusBar translucent style="light" backgroundColor="transparent" />
-        <Center flex={1}>
-          <Text color="white">
-            Open up App.tsx to start working on your app!
-          </Text>
-        </Center>
+        <StatusBar
+          translucent
+          style="light"
+          backgroundColor={THEME.colors.green[700]}
+        />
+        <SignIn />
       </SafeAreaView>
     </NativeBaseProvider>
   );
